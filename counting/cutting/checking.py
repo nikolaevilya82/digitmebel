@@ -27,5 +27,5 @@ def generator_details(quantity: int, ) -> List[Detail]:
 
 
 if __name__ == '__main__':
-    for i_elem in preparing_details(generator_details(30)):
+    for i_elem in preparing_details(generator_details(10)):
         print(i_elem)
