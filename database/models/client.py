@@ -9,7 +9,7 @@ from database.models.project import Project
 
 
 class Client(Base):
-    __table_name__ = "client"
+    __tablename__ = "client"
     id: Mapped[uuid.UUID] = mapped_column(
         UUID(as_uuid=True),
         primary_key=True,

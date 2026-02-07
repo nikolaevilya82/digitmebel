@@ -9,7 +9,7 @@ from database.models.product import Product
 
 
 class Room(Base):
-    __table_name__ = "room"
+    __tablename__ = "room"
     id: Mapped[uuid.UUID] = mapped_column(
         UUID(as_uuid=True),
         primary_key=True,

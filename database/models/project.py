@@ -12,7 +12,7 @@ from database.models.calculation import Calculation
 
 
 class Project(Base):
-    __table_name__ =  "project"
+    __tablename__ =  "project"
     id: Mapped[uuid.UUID] = mapped_column(
         UUID(as_uuid=True),
         primary_key=True,
