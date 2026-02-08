@@ -7,7 +7,7 @@ from database.db import Base
 from database.models.project import Project
 from database.models.room import Room
 from database.models.furniture import FurnitureType
-from database.models.module import Module
+from database.models.furniture_elements.module import Module
 
 
 class Product(Base):
@@ -35,9 +35,9 @@ class Product(Base):
     placement_data: Mapped[Optional[dict]] = mapped_column(JSON)
 
     # Связи
-    project: Mapped["Project"] = relationship(back_populates="products")
-    room: Mapped[Optional["Room"]] = relationship(back_populates="products")
-    type: Mapped["FurnitureType"] = relationship(back_populates="products")
+    project: Mapped["Project"] = relationship(back_populates="product")
+    room: Mapped[Optional["Room"]] = relationship(back_populates="product")
+    type: Mapped["FurnitureType"] = relationship(back_populates="product")
     modules: Mapped[List["Module"]] = relationship(
         back_populates="product",
         cascade="all, delete-orphan"
